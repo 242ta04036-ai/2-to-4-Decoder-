@@ -1,0 +1,75 @@
+# 2-to-4 Decoder using Verilog
+
+## Project Overview
+
+A Decoder is a combinational logic circuit that converts an n-bit binary input
+into one of 2ⁿ unique outputs. This project implements a **2-to-4 Decoder**
+using Verilog HDL.
+
+## Objective
+
+To design, simulate, and verify a 2-to-4 Decoder using Verilog.
+
+## Inputs
+
+- A (Most Significant Bit)
+- B (Least Significant Bit)
+
+## Outputs
+
+- Y0
+- Y1
+- Y2
+- Y3
+
+Only one output is HIGH for each input combination.
+
+## Truth Table
+
+| A | B | Y3 | Y2 | Y1 | Y0 |
+|---|---|----|----|----|----|
+| 0 | 0 | 0 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 | 0 | 0 |
+
+## Logic Equations
+
+Y0 = ~A & ~B
+
+Y1 = ~A & B
+
+Y2 = A & ~B
+
+Y3 = A & B
+
+## Files Included
+
+- decoder.v
+- tb_decoder.v
+- simulation_output.txt
+- waveform.png
+- README.md
+
+## Software Requirements
+
+- Icarus Verilog
+- GTKWave
+- ModelSim
+- Vivado
+
+## Compile
+
+iverilog -o decoder decoder.v tb_decoder.v
+
+## Run Simulation
+
+vvp decoder
+
+## View Waveform
+
+gtkwave decoder.vcd
+
+## Result
+
+The simulation verifies that exactly one output becomes HIGH for each input combination.
